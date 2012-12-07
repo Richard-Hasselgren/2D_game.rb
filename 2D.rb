@@ -20,8 +20,18 @@ class Player < Chingu::GameObject
 		self.input = {
 			holding_left: :left,
 			holding_right: :right,
+			holding_up: :up,
+			holding_down: :down,
 			space: :fire
 		}
+	end
+
+	def up
+		@y -= 5
+	end
+
+	def down
+		@y += 5
 	end
 
 	def left
@@ -44,7 +54,7 @@ class Laser < Chingu::GameObject
 	def setup
 		@image = Gosu::Image["laser.png"]
 		self.velocity_y = -10
-		after(5000) {self.destroy}
+		after(1500) {self.destroy}
 	end
 
 end
