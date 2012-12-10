@@ -6,7 +6,10 @@ class Customer
 		@name = name
 		@cart = Cart.new(self)
 	end
-
+	
+	def add_to_cart(item)
+		@cart.items << item
+	end
 end
 
 class Cart
@@ -35,4 +38,10 @@ cust2 = Customer.new("Eddie")
 korv = Item.new("sausage", 12)
 senap = Item.new("mustard", 5)
 mos = Item.new("mash", 3)
+cust1.add_to_cart(korv)
+cust1.add_to_cart(korv)
+cust1.add_to_cart(senap)
 
+puts cust1.cart.items.each do |sak|
+	puts sak
+end
