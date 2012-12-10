@@ -22,9 +22,12 @@ class Cart
 	end
 
 	def contents
-		@items.each do |item|
-			puts item.name
+		total_price = 0
+		@items.each_wiht_index do |item, i|
+			puts "#{i + 1}: #{item.name} (#{item.price})"
+			total_price += item.price 
 		end
+		puts "Total cost: #{total_price} GBP"
 	end
 
 end
@@ -48,6 +51,4 @@ cust1.add_to_cart(korv)
 cust1.add_to_cart(korv)
 cust1.add_to_cart(senap)
 
-puts cust1.cart.items.each do |sak|
-	puts sak.name
-end
+cust1.cart.contents
