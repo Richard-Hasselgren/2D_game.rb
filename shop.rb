@@ -23,7 +23,9 @@ end
 
 class Item
 
-	def initialize
+	def initialize(name, price)
+		@name = name
+		@price = price
 	end
 
  end
