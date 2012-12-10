@@ -21,6 +21,12 @@ class Cart
 		@items = []
 	end
 
+	def contents
+		@items.each do |item|
+			puts item.name
+		end
+	end
+
 end
 
 
@@ -43,5 +49,5 @@ cust1.add_to_cart(korv)
 cust1.add_to_cart(senap)
 
 puts cust1.cart.items.each do |sak|
-	puts sak
+	puts sak.name
 end
